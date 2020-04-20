@@ -1,0 +1,12 @@
+#this macro seems to not work with the console. Instead type ./NeutronSource to open UI-mode
+#and enter these commands below for visualization
+
+/run/initialize
+/vis/open OGLSQt
+/vis/drawVolume 
+/vis/scene/add/trajectories smooth
+/vis/scene/endOfEventAction accumulate
+
+/gun/particle deuteron
+/gun/energy 35 MeV
+
