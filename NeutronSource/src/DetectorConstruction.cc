@@ -33,14 +33,15 @@ DetectorConstruction::DetectorConstruction()
  fDetectorMessenger(0)
 {
   fAbsorRadius = 40*mm;
-  fAbsorLength = 1.16*cm;
+  fAbsorLength = 0.25*mm;
   fContainThickness = 0.*cm;
   //fContainThickness = 0.025*cm;
   fCylinderThickness = 0.0001*mm;
   DefineMaterials();
   //SetAbsorMaterial  ("BeO");
   //SetAbsorMaterial  ("Be2");
-  SetAbsorMaterial  ("G4_Be");
+  //SetAbsorMaterial  ("G4_Be");
+  SetAbsorMaterial  ("G4_GRAPHITE");
   //SetAbsorMaterial  ("G4_Li");
   //SetAbsorMaterial  ("G4_Al");
   //SetAbsorMaterial  ("AlMg3");
@@ -88,6 +89,7 @@ void DetectorConstruction::DefineMaterials()
   //G4Material* lithium = nist->FindOrBuildMaterial("G4_Li");
   G4Material* aluminum = nist->FindOrBuildMaterial("G4_Al");
   G4Material* magnesium = nist->FindOrBuildMaterial("G4_Mg");
+  //G4Material* graphite = nist->FindOrBuildMaterial("G4_Graphite");
   //G4Material* lead = nist->FindOrBuildMaterial("G4_Pb");
 
   G4Material* BeO = 

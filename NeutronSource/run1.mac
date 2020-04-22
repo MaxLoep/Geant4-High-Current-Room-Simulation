@@ -25,9 +25,6 @@
 #/gun/ion 95 241
 #/gun/energy 0. eV
 #
-#/gun/particle proton
-#/gun/energy 14. MeV
-#
 
 /gun/particle deuteron
 #/gun/energy 39.2 MeV
@@ -51,28 +48,19 @@
 #/gps/ene/ezero 2.
 
 #
-/analysis/setFileName test
+/analysis/setFileName 0-25mmGraphite28MeVDeut1
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
 /analysis/h1/set 8  100  0. 40.  MeV #deuterons
 /analysis/h1/set 9  60  0. 30.  MeV #alphas
-/analysis/h1/set 14  100  0. 4.  radian #angular
-#/analysis/h1/set 15  100  -10. 10.  radian #angular neutrons
+/analysis/h1/set 14  100  0. 4.  radian #angular neutrons
+/analysis/h1/set 15  100  0. 4.  radian #angular protons
+/analysis/h1/set 16  100  0. 4.  radian #angular deutrons
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName Foil2-0-25mm
-/analysis/h1/set 4 100  0. 10.  MeV #gammas
-/analysis/h1/set 6  100  0. 40.  MeV #neutrons
-/analysis/h1/set 7  100 0. 40.  MeV #protons
-/analysis/h1/set 8  100  0. 40.  MeV #deuterons
-/analysis/h1/set 9  60  0. 30.  MeV #alphas
-/analysis/h1/set 14  100  0. 4.  radian #angular
-/run/printProgress 2000000
-/run/beamOn 200000000	#1e8 events
-
-/analysis/setFileName Foil3-0-25mm
+/analysis/setFileName 0-25mmGraphite28MeVDeut2
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -82,7 +70,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName Foil4-0-25mm
+/analysis/setFileName 0-25mmGraphite28MeVDeut3
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -92,7 +80,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName Foil5-0-25mm
+/analysis/setFileName 0-25mmGraphite28MeVDeut4
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -102,7 +90,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName Foil6-0-25mm
+/analysis/setFileName 0-25mmGraphite28MeVDeut5
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -112,7 +100,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName Foil7-0-25mm
+/analysis/setFileName 0-25mmGraphite28MeVDeut6
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -122,7 +110,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName Foil8-0-25mm
+/analysis/setFileName 0-25mmGraphite28MeVDeut7
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -132,7 +120,17 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName Foil9-0-25mm
+/analysis/setFileName 0-25mmGraphite28MeVDeut8
+/analysis/h1/set 4 100  0. 10.  MeV #gammas
+/analysis/h1/set 6  100  0. 40.  MeV #neutrons
+/analysis/h1/set 7  100 0. 40.  MeV #protons
+/analysis/h1/set 8  100  0. 40.  MeV #deuterons
+/analysis/h1/set 9  60  0. 30.  MeV #alphas
+/analysis/h1/set 14  100  0. 4.  radian #angular
+/run/printProgress 2000000
+/run/beamOn 200000000	#1e8 events
+
+/analysis/setFileName 0-25mmGraphite28MeVDeut9
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -142,7 +140,7 @@
 /run/printProgress 1000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName Foil10-0-5mm
+/analysis/setFileName 0-25mmGraphite28MeVDeut10
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -152,7 +150,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName Foil11-0-25mm
+/analysis/setFileName 0-25mmGraphite28MeVDeut11
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons

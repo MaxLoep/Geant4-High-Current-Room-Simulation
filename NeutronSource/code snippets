@@ -1,0 +1,29 @@
+ 
+Introduce a counting mechnism in the method UserPostTrackingAction, which keeps track of the total number of secondary electrons produced in the simulation: 
+
+UserTrackingAction::UserTrackingAction() :
+    counter(0) {
+
+}
+
+The user tracking action class holds the pointer to the tracking manager (fpTrackingManager). From the tracking manager we can retrieve the secondary track vector (i.e. a G4TrackVector object), which is a container class for tracks. To count the number of secondary electrons, we need to loop over all entries and check the particle type. Note that G4TrackVector is defined as:
+
+typedef std::vector< G4Track* > G4TrackVector;
+
+You can thus use the standard template library (STL) functionality of the vector container class (you may also use iterators). The implementation of UserPostTrackingAction can be as follows:
+
+void UserTrackingAction::UserPostTrackingAction(const G4Track*) {
+
+  G4TrackVector* secTracks = fpTrackingManager -> GimmeSecondaries();
+
+  if(secTracks) { 
+     size_t nmbSecTracks = (*secTracks).size();       
+
+     for(size_t i = 0; i < nmbSecTracks; i++) { 
+        if((*secTracks)[i] -> GetDefinition() == G4Electron::Definition()) 
+              counter++;
+     }
+  }
+}
+from
+https://www.ge.infn.it/geant4/training/ptb_2009/day4/solutions_day4_partIII.html
