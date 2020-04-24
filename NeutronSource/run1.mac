@@ -1,4 +1,4 @@
-#
+ #
 # Macro file for "AmBe.cc"
 #
 /control/verbose 2
@@ -48,19 +48,19 @@
 #/gps/ene/ezero 2.
 
 #
-/analysis/setFileName 0-25mmGraphite28MeVDeut1
+/analysis/setFileName normaltest
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
 /analysis/h1/set 8  100  0. 40.  MeV #deuterons
 /analysis/h1/set 9  60  0. 30.  MeV #alphas
-/analysis/h1/set 14  100  0. 4.  radian #angular neutrons
+/analysis/h1/set 14  50  0. 4.  radian #angular neutrons
 /analysis/h1/set 15  100  0. 4.  radian #angular protons
 /analysis/h1/set 16  100  0. 4.  radian #angular deutrons
-/run/printProgress 2000000
-/run/beamOn 200000000	#1e8 events
+/run/printProgress 200000
+/run/beamOn 20000000	#1e8 events
 
-/analysis/setFileName 0-25mmGraphite28MeVDeut2
+/analysis/setFileName 1mmGraphite28MeVDeut2
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -70,7 +70,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName 0-25mmGraphite28MeVDeut3
+/analysis/setFileName 1mmGraphite28MeVDeut3
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -80,7 +80,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName 0-25mmGraphite28MeVDeut4
+/analysis/setFileName 1mmGraphite28MeVDeut4
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -90,7 +90,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName 0-25mmGraphite28MeVDeut5
+/analysis/setFileName 1mmGraphite28MeVDeut5
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -100,7 +100,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName 0-25mmGraphite28MeVDeut6
+/analysis/setFileName 1mmGraphite28MeVDeut6
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -110,7 +110,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName 0-25mmGraphite28MeVDeut7
+/analysis/setFileName 1mmGraphite28MeVDeut7
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -120,7 +120,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName 0-25mmGraphite28MeVDeut8
+/analysis/setFileName 1mmGraphite28MeVDeut8
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -130,7 +130,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName 0-25mmGraphite28MeVDeut9
+/analysis/setFileName 1mmGraphite28MeVDeut9
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -140,7 +140,7 @@
 /run/printProgress 1000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName 0-25mmGraphite28MeVDeut10
+/analysis/setFileName 1mmGraphite28MeVDeut10
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons
@@ -150,7 +150,7 @@
 /run/printProgress 2000000
 /run/beamOn 200000000	#1e8 events
 
-/analysis/setFileName 0-25mmGraphite28MeVDeut11
+/analysis/setFileName 1mmGraphite28MeVDeut11
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons

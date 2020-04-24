@@ -68,7 +68,7 @@ void TrackingAction::PostUserTrackingAction(const G4Track* track)
  //if (angle > 1.57) return;      //90 degree cutoff
  //if (angle > 0.087266) return;  //5 degree cutoff
  //if (angle > 0.01745329) return;  //1 degree cutoff
- if (angle > 0.00872664626) return;  //0.5 degree cutoff - paper
+ //if (angle > 0.00872664626) return;  //0.5 degree cutoff - paper
  //if (angle > 0.001745329) return;  //0.1 degree cutoff
  //if (energy < 0.1*MeV) return;    //5.1 MeV Cutoff
 

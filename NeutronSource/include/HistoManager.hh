@@ -12,8 +12,8 @@
 
 
 //choose the output file type.
-#include "g4csv.hh"     //not working for multithreading mode. MT uses .root instead
-//#include "g4root.hh"
+//#include "g4csv.hh"     //not working for multithreading mode. MT uses .root instead
+#include "g4root.hh"
 //#include "g4xml.hh"
 
 

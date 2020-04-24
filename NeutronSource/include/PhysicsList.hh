@@ -56,6 +56,7 @@ private:
    G4VPhysicsConstructor* fElectromagnetic;
    G4VPhysicsConstructor* fDecay;
    G4VPhysicsConstructor* fRadioactiveDecay;
+   G4VPhysicsConstructor* fStoppingPhysics;
 
 };
 

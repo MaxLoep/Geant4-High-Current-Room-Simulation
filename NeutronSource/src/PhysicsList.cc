@@ -23,6 +23,9 @@
 #include "G4HadronPhysicsQGSP_BIC_AllHP.hh"
 #include "G4HadronInelasticQBBC.hh"
 #include "G4HadronPhysicsINCLXX.hh"
+//#include "G4HadronPhysicsQGSP_INCLXX.hh"
+//#include "G4HadronPhysicsQGSP_INCLXX_HP.hh"
+//#include "G4HadronPhysicsFTFP_INCLXX_HP.hh"
 #include "G4HadronPhysicsQGSP_BERT_HP.hh"
 
 #include "G4IonElasticPhysics.hh"
@@ -55,6 +58,8 @@
 #include "G4CrossSectionInelastic.hh"
 
 
+
+
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 PhysicsList::PhysicsList()
@@ -66,7 +71,8 @@ PhysicsList::PhysicsList()
  fGammaNuclear(nullptr),
  fElectromagnetic(nullptr),
  fDecay(nullptr),
- fRadioactiveDecay(nullptr)
+ fRadioactiveDecay(nullptr),
+ fStoppingPhysics(nullptr)
 
 
 {
@@ -88,7 +94,8 @@ PhysicsList::PhysicsList()
   //fHadronInelastic = new G4HadronPhysicsQGSP_BIC_HP(verb);      //# default
   ////fHadronInelastic = new G4HadronPhysicsQGSP_BIC_AllHP(verb);
   ////fHadronInelastic = new G4HadronInelasticQBBC(verb);
-  fHadronInelastic = new G4HadronPhysicsINCLXX(verb);
+  fHadronInelastic = new G4HadronPhysicsINCLXX(verb);             //best for spallation
+  //fHadronInelastic = new G4HadronPhysicsQGSP_INCLXX_HP(verb);
   ////fHadronInelastic = new G4HadronPhysicsQGSP_BIC_HP(verb);
   //fHadronInelastic = new G4HadronPhysicsQGSP_BERT_HP(verb);      //#
 
@@ -106,7 +113,8 @@ PhysicsList::PhysicsList()
   RegisterPhysics(fIonInelastic);
 
   // stopping Particles
-  ///RegisterPhysics( new G4StoppingPhysics(verb));
+  fStoppingPhysics = new G4StoppingPhysics(verb);
+  RegisterPhysics(fStoppingPhysics);
 
   // Gamma-Nuclear Physics
   fGammaNuclear = new GammaNuclearPhysics("gamma");
@@ -204,6 +212,7 @@ void PhysicsList::ConstructProcess()
   fElectromagnetic->ConstructProcess();
   fDecay->ConstructProcess();
   fRadioactiveDecay->ConstructProcess();
+  fStoppingPhysics->ConstructProcess();
 
 
 /*  // example of GetHadronicModel (due to bug in QGSP_BIC_AllHP)
