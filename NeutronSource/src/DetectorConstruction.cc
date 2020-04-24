@@ -33,7 +33,7 @@ DetectorConstruction::DetectorConstruction()
  fDetectorMessenger(0)
 {
   fAbsorRadius = 40*mm;
-  fAbsorLength = 0.25*mm;
+  fAbsorLength = 1.*mm;
   fContainThickness = 0.*cm;
   //fContainThickness = 0.025*cm;
   fCylinderThickness = 0.0001*mm;
