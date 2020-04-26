@@ -31,13 +31,13 @@
 /gun/energy 28 MeV
 
 #gaussian energy distribution
-#/gps/pos/type Point
+/gps/pos/type Point
 #/gps/pos/cente 0 0 0 cm
-#/gps/particle deuteron
-#/gps/ene/type Gauss
-#/gps/ene/mono 35. MeV
-#/gps/ene/sigma 1. MeV
-#/gps/direction 0 0 1
+/gps/particle deuteron
+/gps/ene/type Gauss
+/gps/ene/mono 35. MeV
+/gps/ene/sigma 0. MeV
+/gps/direction 0 0 1
 
 
 #exponential energy distribution
@@ -48,7 +48,7 @@
 #/gps/ene/ezero 2.
 
 #
-/analysis/setFileName normaltest
+/analysis/setFileName normal
 /analysis/h1/set 4 100  0. 10.  MeV #gammas
 /analysis/h1/set 6  100  0. 40.  MeV #neutrons
 /analysis/h1/set 7  100 0. 40.  MeV #protons

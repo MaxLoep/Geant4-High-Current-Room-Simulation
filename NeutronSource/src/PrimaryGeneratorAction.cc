@@ -33,7 +33,7 @@
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 PrimaryGeneratorAction::PrimaryGeneratorAction(DetectorConstruction* det)
-: G4VUserPrimaryGeneratorAction(), fParticleGun(0), fDetector(det)
+: G4VUserPrimaryGeneratorAction(), fParticleGun(0), fGPS(0) , fDetector(det)
 {
   G4int n_particle = 1;
   fParticleGun  = new G4ParticleGun(n_particle);
@@ -41,16 +41,17 @@ PrimaryGeneratorAction::PrimaryGeneratorAction(DetectorConstruction* det)
   fParticleGun->SetParticleEnergy(14*MeV);                              //set not here but in macrofile
   fParticleGun->SetParticlePosition(G4ThreeVector(0.,0.,0.));           //set not here but below
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));  //set not here but below
-/*
-  fGPS = new G4GeneralParticleSource();
 
+  fGPS = new G4GeneralParticleSource();
+/*
   G4ParticleDefinition* myParticle;
   myParticle = G4ParticleTable::GetParticleTable()->FindParticle("Deuteron");
   fGPS->SetParticleDefinition(myParticle);
+*/
   fGPS->GetCurrentSource()->GetEneDist()->SetMonoEnergy(35.*MeV);
   fGPS->GetCurrentSource()->GetAngDist()->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));
 //  fGPS->GetCurrentSource()->GetPosDist()->SetCentreCoords(G4ThreeVector(0,0,0));
-*/
+
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -58,7 +59,7 @@ PrimaryGeneratorAction::PrimaryGeneratorAction(DetectorConstruction* det)
 PrimaryGeneratorAction::~PrimaryGeneratorAction()
 {
   delete fParticleGun;
-  //delete fGPS;
+  delete fGPS;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -97,7 +98,7 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   //G4double Surface = ((fDetector->GetAbsorLength())+(fDetector->GetContainThickness()));
   G4double Surface = ((fDetector->GetAbsorLength())+(fDetector->GetCylinderThickness()));
   fParticleGun->SetParticlePosition(G4ThreeVector(0,0,-Surface));
-  //fGPS->SetParticlePosition(G4ThreeVector(0,0,-Surface));
+  fGPS->SetParticlePosition(G4ThreeVector(0,0,-Surface));
   //fParticleGun->SetParticlePosition(G4ThreeVector(0,0,-5*cm));
 /*
   //distribution uniform in solid angle
@@ -114,9 +115,10 @@ void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 
   //Direction of the primaries
   fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.)); //set particle momentum
-  fParticleGun->GeneratePrimaryVertex(anEvent);
+  fGPS->GetCurrentSource()->GetAngDist()->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
 
-  //fGPS->GeneratePrimaryVertex(anEvent);
+  //fParticleGun->GeneratePrimaryVertex(anEvent);
+  fGPS->GeneratePrimaryVertex(anEvent);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
